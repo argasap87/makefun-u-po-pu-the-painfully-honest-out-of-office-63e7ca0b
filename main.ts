@@ -6,6 +6,8 @@
 // and will mass-archive it on return) yet stays polite enough for a manager
 // to let it stand, because the confession is wrapped in professional
 // euphemism: "the deep work of ignoring my inbox" and "strategically archive".
+// Revision (v2): the punchline now lands on the reader's own email —
+// "yours included" — so the private truth is specific, not abstract.
 //
 // Runs under Node 22 type-stripping with only built-in modules; no network,
 // no external tools, no files beyond this entry.
@@ -14,7 +16,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const LINE =
-  "I'm out of the office doing the deep work of ignoring my inbox, and when I'm back I'll strategically archive everything older than this message.";
+  "I'm out of the office doing the deep work of ignoring my inbox, and when I'm back I'll strategically archive everything older than this message, yours included.";
 
 // Built-in gate check: exactly one sentence, 1-200 characters (UTF-8).
 function gate(line: string): void {
